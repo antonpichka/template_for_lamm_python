@@ -1,6 +1,5 @@
 import asyncio
-from discord.ext import commands
-from typing import final
+from typing import Callable, final
 from library_architecture_mvvm_modify_python import BaseNamedState, DefaultState, RWTMode, EnumRWTMode, NamedCallback, debug_print
 from discord_bot_template_for_lamm_python.src.named_utility.keys_success_utility import KeysSuccessUtility
 from discord_bot_template_for_lamm_python.src.named_vm.kirill_vm.data_for_kirill_vm import DataForKirillVM
@@ -24,20 +23,15 @@ class KirillVM():
             ]
         )
     
-    async def initWBuild(self, ctx: commands.Context, bot: commands.Bot) -> None:
+    async def init_w_build(self, callback_w_exception: Callable[[str], None], callback_w_success: Callable[[str], None]) -> None:
         callback = await self.__RWT_MODE.get_named_callback_from_name("init").CALLBACK()
         debug_print("KirillVM: " + callback)
         data_for_named = self.__NAMED_STATE.get_data_for_named()
         match data_for_named.get_enum_data_for_named():
             case EnumDataForKirillVM.EXCEPTION:
-                channel = bot.get_channel(receiving_channel_id)
-                await channel.send("TASK")
-                return
+                callback_w_exception(data_for_named.exception_controller.get_key_parameter_exception())
             case EnumDataForKirillVM.SUCCESS:
-                await channel.send("TASK")
-                return
-            case _:
-                return
+                callback_w_success("Success")
     
     def dispose(self) -> None:
         self.__NAMED_STATE.dispose()

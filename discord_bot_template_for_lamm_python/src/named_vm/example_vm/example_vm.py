@@ -23,7 +23,7 @@ class ExampleVM():
             ]
         )
     
-    async def initWBuild(self, callback_w_exception: Callable[[str], None], callback_w_success: Callable[[str], None]) -> None:
+    async def init_w_build(self, callback_w_exception: Callable[[str], None], callback_w_success: Callable[[str], None]) -> None:
         callback = await self.__RWT_MODE.get_named_callback_from_name("init").CALLBACK()
         debug_print("ExampleVM: " + callback)
         data_for_named = self.__NAMED_STATE.get_data_for_named()
