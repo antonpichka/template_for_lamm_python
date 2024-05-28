@@ -1,9 +1,9 @@
 import asyncio
 from typing import Callable, final
-from library_architecture_mvvm_modify_python import BaseNamedState, DefaultState, RWTMode, EnumRWTMode, NamedCallback, debug_print
-from discord_bot_template_for_lamm_python.src.named_utility.keys_success_utility import KeysSuccessUtility
-from discord_bot_template_for_lamm_python.src.named_vm.example_vm.data_for_example_vm import DataForExampleVM
-from discord_bot_template_for_lamm_python.src.named_vm.example_vm.enum_data_for_example_vm import EnumDataForExampleVM
+from library_architecture_mvvm_modify_python import *
+from discord_bot_template_for_lamm_python.named_utility.keys_success_utility import KeysSuccessUtility
+from discord_bot_template_for_lamm_python.named_vm.example_vm.data_for_example_vm import DataForExampleVM
+from discord_bot_template_for_lamm_python.named_vm.example_vm.enum_data_for_example_vm import EnumDataForExampleVM
 
 @final
 class ExampleVM():
@@ -29,9 +29,9 @@ class ExampleVM():
         data_for_named = self.__NAMED_STATE.get_data_for_named()
         match data_for_named.get_enum_data_for_named():
             case EnumDataForExampleVM.EXCEPTION:
-                callback_w_exception(data_for_named.exception_controller.get_key_parameter_exception())
+                return await callback_w_exception(data_for_named.exception_controller.get_key_parameter_exception())
             case EnumDataForExampleVM.SUCCESS:
-                callback_w_success("Success")
+                return await callback_w_success("Success")
 
     def dispose(self) -> None:
         self.__NAMED_STATE.dispose()
