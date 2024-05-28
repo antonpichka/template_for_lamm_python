@@ -9,7 +9,7 @@
 ## Project setup
 
 - [discord_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_python#discord_bot_template_for_lamm_python)
-- [twitch_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_pythont#twitch_bot_template_for_lamm_python)
+- [twitch_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_python#twitch_bot_template_for_lamm_python)
 
 ### discord_bot_template_for_lamm_python
 

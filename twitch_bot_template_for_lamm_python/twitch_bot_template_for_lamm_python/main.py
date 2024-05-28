@@ -14,4 +14,4 @@ bot = commands.Bot(
 async def hello(ctx: commands.Context):
     await ctx.send("World")
 
-bot.run()  
+bot.run()
