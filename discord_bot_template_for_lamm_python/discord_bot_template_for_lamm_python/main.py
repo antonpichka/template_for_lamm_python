@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 name_bot = "test_bot#3697"
 first_message_w_sending_channel = "Commands:\n- /test @member\n- /kirill"
 sending_channel_id = 1244204490153005068
-receiving_channel_id = 1244204698529959997
+receiving_channel_id = 1244204698529959997  
 
 @bot.event
 async def on_message(message: discord.Message):
