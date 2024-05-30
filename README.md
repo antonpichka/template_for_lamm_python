@@ -1,5 +1,4 @@
 - https://github.com/antonpichka/library_architecture_mvvm_modify/tree/main/package#architectural-objects
-- https://github.com/antonpichka/template_for_lamm_python/tree/main/discord_bot_template_for_lamm_python/discord_bot_template_for_lamm_python/named_vm/example_vm
 - https://github.com/antonpichka/library_architecture_mvvm_modify/labels
 
 ---
