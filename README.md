@@ -28,7 +28,3 @@ entry_points={
         ]
     }
 ```
-
-### twitch_bot_template_for_lamm_python
-
-- Coming Soon
