@@ -8,6 +8,7 @@
 ## Project setup
 
 - [discord_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_python#discord_bot_template_for_lamm_python)
+- [telegram_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_python#telegram_bot_template_for_lamm_python)
 
 ### discord_bot_template_for_lamm_python
 
@@ -17,30 +18,33 @@
 - - 'discord_bot_template_for_lamm_python/setup.py'
 - - - 'name=discord_bot_template_for_lamm_python'
 - - - 'packages=[...]'
-- - - Change your project's dependency path in "discord_bot_template_for_lamm_python"
 ```  
 entry_points={
         "console_scripts": [
             "program = discord_bot_template_for_lamm_python.main:main",
-            "q = discord_bot_template_for_lamm_python.named_test_main.q:main"
+            "q_test_main = discord_bot_template_for_lamm_python.named_test_main.q_test_main:main"
+        ]
+    }
+```
+
+### telegram_bot_template_for_lamm_python
+
+-  If you need to change the application name from 'telegram_bot_template_for_lamm_python' to 'telegram_bot_${your_name}':
+- - 'telegram_bot_template_for_lamm_python/telegram_bot_template_for_lamm_python'
+- - - 'telegram_bot_template_for_lamm_python' to 'telegram_bot_${your_name}':
+- - 'telegram_bot_template_for_lamm_python/setup.py'
+- - - 'name=telegram_bot_template_for_lamm_python'
+- - - 'packages=[...]'
+```  
+entry_points={
+        "console_scripts": [
+            "program = telegram_bot_template_for_lamm_python.main:main",
+            "q_test_main = telegram_bot_template_for_lamm_python.named_test_main.q_test_main:main"
         ]
     }
 ```
 
 ## Note
-
-- The Telegram bot works in the same way as the Discord bot. Here is an example of running the 'main.py' telegram bot using the 'pyTelegramBotAPI' library:
-```
-import telebot
-
-bot = telebot.TeleBot("YOUR_BOT_TOKEN")
-
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-	bot.reply_to(message, "Howdy, how are you doing?")
-
-bot.infinity_polling()
-```
 
 - I don’t recommend developing a twitch bot, and here’s why (Used the 'twitchio' library):
 - - To launch a Twitch bot with the bot name, you need to use curl to make a request to receive a token, where you must specify 2 parameters 'client_id', 'client_secret'. After receiving the token, we enter the source code as in Discord Bot and Telegram Bot, but we need to write down which Twitch channels to send the bot to, which already creates a problem, because why enter channels if you can do it like in Discord (to connect Discord Bot we need URL link to this bot, and you’re done) or Telegram (we enter the username of the bot in the search, and use it, and you’re done). In general, you need to create a mini-site in order to add Twtich Bot to your channel through Twitch integration, or maybe there is another way, but this already creates a lot of inconvenience compared to Discord Bot and Telegram Bot. But even after all this it will write the error AttributeError: 'NoneType' object has no attribute 'cancel'
