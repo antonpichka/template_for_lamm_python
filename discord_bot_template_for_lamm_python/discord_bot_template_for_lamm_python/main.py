@@ -75,4 +75,4 @@ async def __kirill_w_init_w_build_w_callback_w_success(_: commands.Context, msg:
 
 ## Add a bot: https://discord.com/oauth2/authorize?client_id=1244168154658242580&permissions=8&scope=bot
 ## Remove two "QQ" on the left and right
-bot.run("MTI0NDE2ODE1NDY1ODI0MjU4MA.Gwzwjs.yvR7nvj9lkKKZ4xBdoOUXISzGKoGplZFXMMDWQ")
+bot.run("QQ_MTI0NDE2ODE1NDY1ODI0MjU4MA.Gwzwjs.yvR7nvj9lkKKZ4xBdoOUXISzGKoGplZFXMMDWQ_QQ")
