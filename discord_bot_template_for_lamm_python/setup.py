@@ -5,6 +5,9 @@ setup(
     version="0.0.1",
     packages=[
         "discord_bot_template_for_lamm_python",
+        "discord_bot_template_for_lamm_python.model_repository.rating_repository",
+        "discord_bot_template_for_lamm_python.model_repository.task_repository",
+        "discord_bot_template_for_lamm_python.model_repository.user_repository",
         "discord_bot_template_for_lamm_python.model.rating",
         "discord_bot_template_for_lamm_python.model.task",
         "discord_bot_template_for_lamm_python.model.user",
@@ -14,7 +17,7 @@ setup(
         "discord_bot_template_for_lamm_python.named_vm.test_vm"
     ],
     install_requires=[
-        "library-architecture-mvvm-modify-python==1.0.2",
+        "library-architecture-mvvm-modify-python==3.0.0",
         "discord.py==2.3.2"
     ],
     entry_points={

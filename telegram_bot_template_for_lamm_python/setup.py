@@ -9,7 +9,7 @@ setup(
         "telegram_bot_template_for_lamm_python.named_utility"
     ],
     install_requires=[
-        "library-architecture-mvvm-modify-python==1.0.2",
+        "library-architecture-mvvm-modify-python==3.0.0",
         "pyTelegramBotAPI==4.18.1"
     ],
     entry_points={

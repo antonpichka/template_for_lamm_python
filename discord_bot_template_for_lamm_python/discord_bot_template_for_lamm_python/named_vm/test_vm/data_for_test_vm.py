@@ -7,7 +7,7 @@ from discord_bot_template_for_lamm_python.named_vm.test_vm.enum_data_for_test_vm
 class DataForTestVM(BaseDataForNamed[EnumDataForTestVM]):
     def __init__(self, is_loading: bool, discord_id: int, rating: Rating) -> None:
         super().__init__(is_loading)
-        self.discord_id: int = discord_id
+        self.DISCORD_ID: int = discord_id
         self.rating: Rating = rating
     
     def get_enum_data_for_named(self) -> EnumDataForTestVM:
@@ -16,4 +16,4 @@ class DataForTestVM(BaseDataForNamed[EnumDataForTestVM]):
         return EnumDataForTestVM.SUCCESS 
     
     def to_string(self) -> str:
-        return "DataForTestVM(is_loading: " + str(self.is_loading) + ", exception_controller: " + self.exception_controller.to_string() + ", discord_id: " + str(self.discord_id) + ", rating: " + self.rating.to_string() + ")" 
+        return "DataForTestVM(is_loading: " + str(self.is_loading) + ", exception_controller: " + self.exception_controller.to_string() + ", discord_id: " + str(self.DISCORD_ID) + ", rating: " + self.rating.to_string() + ")" 
