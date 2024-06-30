@@ -17,7 +17,7 @@ setup(
         "discord_bot_template_for_lamm_python.named_vm.test_vm"
     ],
     install_requires=[
-        "library-architecture-mvvm-modify-python==3.0.0",
+        "library-architecture-mvvm-modify-python==3.0.1",
         "discord.py==2.3.2"
     ],
     entry_points={

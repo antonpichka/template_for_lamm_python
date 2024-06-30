@@ -12,28 +12,24 @@ class TaskRepository(Generic[T,Y], BaseModelRepository[T,Y]):
         super().__init__(enum_rwt_mode)
 
     def _get_base_model_from_map_and_list_keys(self, map: dict[str, object], list_keys: list[str]) -> T:
-        if len(list_keys) <= 0:
-            return Task("","")
-        if map.get(list_keys[0]) is None:
-            return Task("","")
-        if len(list_keys) <= 1:
-            return Task(map.get(list_keys[0]),"")
-        if map.get(list_keys[1]) is None:
-            return Task(map.get(list_keys[0]),"")
-        return Task(map.get(list_keys[0]),map.get(list_keys[1]))
+        return Task(
+            self._get_safe_value_where_used_in_method_get_model_from_map_and_list_keys_and_index_and_default_value(
+                map, list_keys, 0, ""),
+            self._get_safe_value_where_used_in_method_get_model_from_map_and_list_keys_and_index_and_default_value(
+                map, list_keys, 1, ""))
     
     def _get_base_list_model_from_list_model(self, list_model: list[T]) -> Y:
         return ListTask(list_model)
     
     async def get_list_task_parameter_one(self) -> Result:
         return await self._get_mode_callback_from_release_callback_and_test_callback_parameter_enum_rwt_mode(
-            self.__get_list_task_parameter_one_w_release_callback,
-            self.__get_list_task_parameter_one_w_test_callback)()
+            self._get_list_task_parameter_one_w_release_callback,
+            self._get_list_task_parameter_one_w_test_callback)()
     
-    async def __get_list_task_parameter_one_w_release_callback(self) -> Result:
+    async def _get_list_task_parameter_one_w_release_callback(self) -> Result:
         raise LocalException("TaskRepository",EnumGuilty.DEVELOPER,"TaskRepositoryQQGet_list_task_parameter_one_w_release_callback")
     
-    async def __get_list_task_parameter_one_w_test_callback(self) -> Result:
+    async def _get_list_task_parameter_one_w_test_callback(self) -> Result:
         map: dict[str, list[dict[str, object]]] = {
             "tasks": [
                 {
@@ -59,7 +55,9 @@ class TaskRepository(Generic[T,Y], BaseModelRepository[T,Y]):
         for task in tasks:
             list_model.append(self._get_base_model_from_map_and_list_keys(
                 task,
-                ["uniqueId","name"]))
+                self._get_list_task_parameter_one_w_list_keys()))
         await asyncio.sleep(1)
         return Result.success(self._get_base_list_model_from_list_model(list_model))
-        
+    
+    def _get_list_task_parameter_one_w_list_keys(self) -> list[str]:
+        return ["uniqueId","name"]

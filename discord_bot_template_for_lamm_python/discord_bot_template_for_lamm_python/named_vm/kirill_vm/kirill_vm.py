@@ -6,12 +6,13 @@ from discord_bot_template_for_lamm_python.model.task.list_task import ListTask
 from discord_bot_template_for_lamm_python.model.task.task import Task
 from discord_bot_template_for_lamm_python.named_vm.kirill_vm.data_for_kirill_vm import DataForKirillVM
 from discord_bot_template_for_lamm_python.named_vm.kirill_vm.enum_data_for_kirill_vm import EnumDataForKirillVM
+from discord_bot_template_for_lamm_python.named_utility.factory_object_utility import FactoryObjectUtility
 
 @final
 class KirillVM():
     def __init__(self) -> None:
         ## ModelRepository
-        self.__TASK_REPOSITORY: TaskRepository = TaskRepository(EnumRWTMode.TEST)
+        self.__TASK_REPOSITORY: TaskRepository = FactoryObjectUtility.get_task_repository()
 
         ## NamedUtility
 

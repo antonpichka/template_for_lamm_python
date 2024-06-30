@@ -6,13 +6,14 @@ from discord_bot_template_for_lamm_python.named_utility.ready_data_utility impor
 from discord_bot_template_for_lamm_python.model.rating.rating import Rating
 from discord_bot_template_for_lamm_python.named_vm.test_vm.data_for_test_vm import DataForTestVM
 from discord_bot_template_for_lamm_python.named_vm.test_vm.enum_data_for_test_vm import EnumDataForTestVM
+from discord_bot_template_for_lamm_python.named_utility.factory_object_utility import FactoryObjectUtility
 
 @final
 class TestVM():
     def __init__(self, discord_id: int) -> None:
         ## ModelRepository
-        self.__USER_REPOSITORY: UserRepository = UserRepository(EnumRWTMode.TEST)
-        self.__RATING_REPOSITORY: RatingRepository = RatingRepository(EnumRWTMode.TEST)
+        self.__USER_REPOSITORY: UserRepository = FactoryObjectUtility.get_user_repository()
+        self.__RATING_REPOSITORY: RatingRepository = FactoryObjectUtility.get_rating_repository()
 
         ## NamedUtility
 
