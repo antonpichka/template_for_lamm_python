@@ -5,9 +5,11 @@ setup(
     version="0.0.1",
     packages=[
         "discord_bot_template_for_lamm_python",
+        "discord_bot_template_for_lamm_python.model_repository.example_repository",
         "discord_bot_template_for_lamm_python.model_repository.rating_repository",
         "discord_bot_template_for_lamm_python.model_repository.task_repository",
         "discord_bot_template_for_lamm_python.model_repository.user_repository",
+        "discord_bot_template_for_lamm_python.model.example",
         "discord_bot_template_for_lamm_python.model.rating",
         "discord_bot_template_for_lamm_python.model.task",
         "discord_bot_template_for_lamm_python.model.user",
