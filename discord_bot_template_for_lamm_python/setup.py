@@ -24,7 +24,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "program = discord_bot_template_for_lamm_python.main:main",
+            "start = discord_bot_template_for_lamm_python.main:main",
             "q_test_main = discord_bot_template_for_lamm_python.named_test_main.q_test_main:main",
             "keys_api_utility_test_main = discord_bot_template_for_lamm_python.named_test_main.keys_api_utility_test_main:main"
         ]

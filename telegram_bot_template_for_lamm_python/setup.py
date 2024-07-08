@@ -14,7 +14,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "program = telegram_bot_template_for_lamm_python.main:main",
+            "start = telegram_bot_template_for_lamm_python.main:main",
             "q_test_main = telegram_bot_template_for_lamm_python.named_test_main.q_test_main:main"
         ]
     }
