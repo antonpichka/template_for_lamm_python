@@ -1,7 +1,7 @@
 import asyncio
 from typing import Callable, final
 from library_architecture_mvvm_modify_python import *
-from discord_bot_template_for_lamm_python.discord_bot_template_for_lamm_python.named_utility.ready_data_utility import ReadyDataUtility
+from discord_bot_template_for_lamm_python.named_utility.ready_data_utility import ReadyDataUtility
 from discord_bot_template_for_lamm_python.named_vm.example_vm.data_for_example_vm import DataForExampleVM
 from discord_bot_template_for_lamm_python.named_vm.example_vm.enum_data_for_example_vm import EnumDataForExampleVM
 

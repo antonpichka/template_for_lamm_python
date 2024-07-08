@@ -8,8 +8,8 @@ T = TypeVar("T", bound=Rating)
 Y = TypeVar("Y", bound=ListRating)
 
 class RatingRepository(Generic[T,Y], BaseModelRepository[T,Y]):
-    def __init__(self, enum_rwt_mode: EnumRWTMode) -> None:
-        super().__init__(enum_rwt_mode)
+    def __init__(self) -> None:
+        super().__init__()
 
     def _get_base_model_from_map_and_list_keys(self, map: dict[str, object], list_keys: list[str]) -> T:
         return Rating(
