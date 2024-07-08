@@ -5,7 +5,6 @@ from discord.ext import commands
 from discord_bot_template_for_lamm_python.named_vm.kirill_vm.kirill_vm import KirillVM
 from discord_bot_template_for_lamm_python.named_vm.test_vm.test_vm import TestVM
 from library_architecture_mvvm_modify_python import BaseModelRepository, EnumRWTMode
-from discord_bot_template_for_lamm_python.named_utility.keys_api_utility import KeysAPIUtility
 
 intents = discord.Intents.default()
 intents.message_content = True
