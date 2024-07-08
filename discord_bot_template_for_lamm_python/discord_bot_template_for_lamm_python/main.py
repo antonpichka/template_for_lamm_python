@@ -7,12 +7,12 @@ from discord_bot_template_for_lamm_python.named_vm.test_vm.test_vm import TestVM
 from library_architecture_mvvm_modify_python import BaseModelRepository, EnumRWTMode
 from discord_bot_template_for_lamm_python.named_utility.keys_api_utility import KeysAPIUtility
 
-BaseModelRepository.enum_rwt_mode = EnumRWTMode.TEST
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="/", intents=intents)
-correct_token = KeysAPIUtility.get_correct_token()
 
+BaseModelRepository.enum_rwt_mode = EnumRWTMode.TEST
+token = "MTI0NDE2ODE1NDY1ODI0MjU4MA.GdghOZ.xHk5k7Hf5wMLBGE5b3Kch_0fvOuDlABiWLUYwQ"
 name_bot = "test_bot#3697"
 first_message_w_sending_channel = "Commands:\n- /test @member\n- /kirill"
 sending_channel_id = 1244204490153005068
@@ -78,4 +78,4 @@ async def __kirill_w_init_w_build_w_callback_w_success(_: commands.Context, msg:
     await channel.send(msg)
 
 ## Add a bot: https://discord.com/oauth2/authorize?client_id=1244168154658242580&permissions=8&scope=bot
-bot.run(correct_token)
+bot.run(token)
