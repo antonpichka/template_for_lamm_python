@@ -1,8 +1,15 @@
 from typing import final
+from library_architecture_mvvm_modify_python import *
 from discord_bot_template_for_lamm_python.model_repository.rating_repository.rating_repository import RatingRepository
 from discord_bot_template_for_lamm_python.model_repository.task_repository.task_repository import TaskRepository
 from discord_bot_template_for_lamm_python.model_repository.user_repository.user_repository import UserRepository
 from discord_bot_template_for_lamm_python.model_repository.example_repository.example_repository import ExampleRepository
+from discord_bot_template_for_lamm_python.named_vm.kirill_vm.data_for_kirill_vm import DataForKirillVM
+from discord_bot_template_for_lamm_python.model.task.list_task import ListTask
+from discord_bot_template_for_lamm_python.model.task.task import Task
+from discord_bot_template_for_lamm_python.named_vm.test_vm.data_for_test_vm import DataForTestVM
+from discord_bot_template_for_lamm_python.model.rating.rating import Rating
+from discord_bot_template_for_lamm_python.named_vm.example_vm.data_for_example_vm import DataForExampleVM
 
 @final
 class FactoryObjectUtility():
@@ -28,3 +35,16 @@ class FactoryObjectUtility():
     @staticmethod
     def get_user_repository() -> 'UserRepository':
         return UserRepository()
+    
+    # NamedState #
+    @staticmethod
+    def get_named_state_where_data_w_example_vm() -> 'BaseNamedState':
+        return DefaultState[DataForExampleVM](DataForExampleVM(False))
+    
+    @staticmethod
+    def get_named_state_where_data_w_kirill_vm() -> 'BaseNamedState':
+        return DefaultState[DataForKirillVM](DataForKirillVM(False,ListTask[Task]([])))
+    
+    @staticmethod
+    def get_named_state_where_data_w_test_vm_from_discord_id(discord_id: int) -> 'BaseNamedState':
+        return DefaultState[DataForTestVM](DataForTestVM(False,discord_id,Rating("",0)))

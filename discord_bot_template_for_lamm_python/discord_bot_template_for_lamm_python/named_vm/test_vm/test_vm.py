@@ -3,7 +3,6 @@ from library_architecture_mvvm_modify_python import *
 from discord_bot_template_for_lamm_python.model_repository.rating_repository.rating_repository import RatingRepository
 from discord_bot_template_for_lamm_python.model_repository.user_repository.user_repository import UserRepository
 from discord_bot_template_for_lamm_python.named_utility.ready_data_utility import ReadyDataUtility
-from discord_bot_template_for_lamm_python.model.rating.rating import Rating
 from discord_bot_template_for_lamm_python.named_vm.test_vm.data_for_test_vm import DataForTestVM
 from discord_bot_template_for_lamm_python.named_vm.test_vm.enum_data_for_test_vm import EnumDataForTestVM
 from discord_bot_template_for_lamm_python.named_utility.factory_object_utility import FactoryObjectUtility
@@ -18,7 +17,7 @@ class TestVM():
         ## NamedUtility
 
         ## NamedState
-        self.__NAMED_STATE: BaseNamedState[DataForTestVM] = DefaultState[DataForTestVM](DataForTestVM(False,discord_id,Rating("",0)))
+        self.__NAMED_STATE: BaseNamedState[DataForTestVM] = FactoryObjectUtility.get_named_state_where_data_w_test_vm_from_discord_id(discord_id)
     
     async def init_w_build(self, callback_w_exception: Callable[[str], None], callback_w_success: Callable[[str], None]) -> None:
         first_request = await self.__first_request()

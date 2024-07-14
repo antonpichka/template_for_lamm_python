@@ -2,8 +2,6 @@ from typing import Callable, final
 from library_architecture_mvvm_modify_python import *
 from discord_bot_template_for_lamm_python.model_repository.task_repository.task_repository import TaskRepository
 from discord_bot_template_for_lamm_python.named_utility.ready_data_utility import ReadyDataUtility
-from discord_bot_template_for_lamm_python.model.task.list_task import ListTask
-from discord_bot_template_for_lamm_python.model.task.task import Task
 from discord_bot_template_for_lamm_python.named_vm.kirill_vm.data_for_kirill_vm import DataForKirillVM
 from discord_bot_template_for_lamm_python.named_vm.kirill_vm.enum_data_for_kirill_vm import EnumDataForKirillVM
 from discord_bot_template_for_lamm_python.named_utility.factory_object_utility import FactoryObjectUtility
@@ -17,7 +15,7 @@ class KirillVM():
         ## NamedUtility
 
         ## NamedState
-        self.__NAMED_STATE: BaseNamedState[DataForKirillVM] = DefaultState[DataForKirillVM](DataForKirillVM(False,ListTask[Task]([])))
+        self.__NAMED_STATE: BaseNamedState[DataForKirillVM] = FactoryObjectUtility.get_named_state_where_data_w_kirill_vm()
 
     async def init_w_build(self, callback_w_exception: Callable[[str], None], callback_w_success: Callable[[str], None]) -> None:
         first_request = await self.__first_request()
