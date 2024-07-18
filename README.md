@@ -8,6 +8,7 @@
 ## Project setup
 
 - [discord_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_python#discord_bot_template_for_lamm_python)
+- [telegram_bot_template_for_lamm_python](https://github.com/antonpichka/template_for_lamm_python#telegram_bot_template_for_lamm_python)
 
 ### discord_bot_template_for_lamm_python
 
@@ -22,6 +23,23 @@ entry_points={
         "console_scripts": [
             "program = discord_bot_template_for_lamm_python.main:main",
             "q_test_main = discord_bot_template_for_lamm_python.named_test_main.q_test_main:main"
+        ]
+    }
+```
+
+### telegram_bot_template_for_lamm_python
+
+-  If you need to change the application name from 'telegram_bot_template_for_lamm_python' to 'telegram_bot_${your_name}':
+- - 'telegram_bot_template_for_lamm_python/telegram_bot_template_for_lamm_python'
+- - - 'telegram_bot_template_for_lamm_python' to 'telegram_bot_${your_name}':
+- - 'telegram_bot_template_for_lamm_python/setup.py'
+- - - 'name=telegram_bot_template_for_lamm_python'
+- - - 'packages=[...]'
+```  
+entry_points={
+        "console_scripts": [
+            "program = telegram_bot_template_for_lamm_python.main:main",
+            "q_test_main = telegram_bot_template_for_lamm_python.named_test_main.q_test_main:main"
         ]
     }
 ```
