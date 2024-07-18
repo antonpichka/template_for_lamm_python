@@ -19,12 +19,12 @@ async def test(event):
     await test_vm.init_w_build(test_w_init_w_build_w_callback_w_exception,test_w_init_w_build_w_callback_w_success)
     test_vm.dispose()
 
-@client.on(events.NewMessage(pattern=r'/text\s+(.*)'))
+@client.on(events.NewMessage(pattern=r"/text\s+(.*)"))
 async def text(event):
     text = event.pattern_match.group(1)
     await event.respond(text)
 
-@client.on(events.NewMessage(pattern=r'/info'))
+@client.on(events.NewMessage(pattern="/info"))
 async def info(event):
     str_users = ""
     async for item_user in client.iter_participants(event.chat_id): 
