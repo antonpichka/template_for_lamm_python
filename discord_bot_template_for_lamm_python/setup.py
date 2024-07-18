@@ -15,6 +15,7 @@ setup(
         "discord_bot_template_for_lamm_python.model.user",
         "discord_bot_template_for_lamm_python.named_test_main",
         "discord_bot_template_for_lamm_python.named_utility",
+        "discord_bot_template_for_lamm_python.named_vm.example_vm",
         "discord_bot_template_for_lamm_python.named_vm.kirill_vm",
         "discord_bot_template_for_lamm_python.named_vm.test_vm"
     ],
